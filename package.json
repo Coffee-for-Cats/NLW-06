@@ -1,0 +1,30 @@
+{
+  "name": "nlw05",
+  "version": "1.0.0",
+  "description": "Um projeto desenvolvido na NLW onde podemos fazer perguntas e respondê-las.",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "nodemon .",
+    "init-db": "node src/db/init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coffee-for-Cats/NLW-06.git"
+  },
+  "keywords": [],
+  "author": "Lucas Schwalm Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coffee-for-Cats/NLW-06/issues"
+  },
+  "homepage": "https://github.com/Coffee-for-Cats/NLW-06#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
