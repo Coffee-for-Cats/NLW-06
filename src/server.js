@@ -13,3 +13,6 @@ server.use(express.urlencoded({extended: true}))
 server.use(route);
 
 server.listen(3000, ()=> { console.log("rodando!") })
+
+//server.set = modificar as configurações padrões do Express
+//server.use = definir algo no Express, não entendi muito bem mas vou pesquisar mais depois.
