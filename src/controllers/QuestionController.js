@@ -24,7 +24,10 @@ module.exports = {
             
             res.redirect(`/room/${roomId}`)
         } else {
-            res.render('passincorrect', {roomId})
+            //carrega a página de erro com o texto correto.
+            const errorText = "Senha incorreta!"
+            const errorDestination = `/room/${roomId}`
+            res.render('error', {errorDestination, errorText})
         }
     },
 

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senha Incorreta</title>
+    <title>Erro!</title>
     <link rel="stylesheet" href="/public/styles/global.css">
 
     <script>
-        confirm("Senha Incorreta!");
-        window.location.replace("/room/<%= roomId %>")
+        confirm( "<%= errorText %>" );
+        window.location.replace( "<%= errorDestination %>" );
     </script>
 </head>
 <body>

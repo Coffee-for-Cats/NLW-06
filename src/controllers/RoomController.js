@@ -25,7 +25,7 @@ module.exports = {
                 await db.run(`INSERT INTO rooms (
                     id,
                     pass
-                ) VAlUES (
+                ) VALUES (
                     ${parseInt(roomId)},
                     ${pass}
                 )`);
@@ -37,21 +37,34 @@ module.exports = {
         res.redirect(`/room/${roomId}`)
     },
 
+    //Abre de fato a sala
     async open(req, res) {
         const db = await Database()
         const roomId = req.params.room
-        const questions = await db.all(`SELECT * FROM questions WHERE room = ${roomId} AND read = 0`)
-        const questionsRead = await db.all(`SELECT * FROM questions WHERE room = ${roomId} AND read = 1`)
 
-        let isNoQuestions;
+        //Se a sala existir
+        const roomsExistIds = await db.all(`SELECT id FROM rooms`)
+        if(roomsExistIds.some( roomExistId => roomExistId = roomId )) {
+            
+            //Carrega a sala
+            const questions = await db.all(`SELECT * FROM questions WHERE room = ${roomId} AND read = 0`)
+            const questionsRead = await db.all(`SELECT * FROM questions WHERE room = ${roomId} AND read = 1`)
 
-        isNoQuestions = questions.length == 0 && questionsRead.length == 0 ? true : false;
+            let isNoQuestions;
 
-        //console.log(questions.length);
+            isNoQuestions = questions.length == 0 && questionsRead.length == 0 ? true : false;
 
-        res.render('room',{roomId, questions, questionsRead, isNoQuestions})
+            res.render('room',{roomId, questions, questionsRead, isNoQuestions})
+        } else {
+
+            //Retorna erro
+            const errorText = "Sala inexistente!"
+            const errorDestination = "/"
+            res.render('error', {errorText, errorDestination})
+        }
     },
 
+    //Tela inicial, redireciona para o caminho do Open
     enter(req, res) {
         const roomId = req.body.roomId
 
