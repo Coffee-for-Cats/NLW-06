@@ -47,7 +47,7 @@ module.exports = {
 
         isNoQuestions = questions.length == 0 && questionsRead.length == 0 ? true : false;
 
-        console.log(questions.length);
+        //console.log(questions.length);
 
         res.render('room',{roomId, questions, questionsRead, isNoQuestions})
     },
