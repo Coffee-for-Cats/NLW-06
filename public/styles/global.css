@@ -122,7 +122,19 @@ button.grey,
 /* HEADER */
 .content header {
   width: 80%;
-  margin: 3.5rem auto;
+  margin: auto auto;
+}
+
+/* GAMBIARA, eu sei, mas funciona kkk */
+.header-container {
+  width: 100%;
+  position: fixed;
+  max-width: min(102rem, 85%);
+  padding: 2rem 12.5% 1.7rem 12.5%;
+  margin-left: -12.5%;
+  box-sizing: content-box;
+  background: var(--background);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .content header img {
