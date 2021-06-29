@@ -9,9 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="/images/icon-tab.png">
+
     <!--CSS-->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/home.css">
+    <!--Colormode / Darkmode-->
+    <link rel="stylesheet" href="/styles/light.css" class="colors">
 
     <!--FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -28,7 +32,7 @@
         </div>
         <header>
             <a href="/">
-                <img src="/images/logo.svg" alt="Rockeat.Q Logo" />
+                <img src="/images/logo-light.svg" alt="Rockeat.Q Logo" />
             </a>
         </header>
 
@@ -39,6 +43,14 @@
             </div>
         </main>
     </div>
+
+    <!-- DARK MODE SWITCH BUTTON -->
+    <button class="dark-mode" onClick="switchDark()">
+        <img src="/images/button-light.svg" alt="Alternar dark-mode">
+    </button>
 </body>
+
+<!-- DARK MODE -->
+<script src="/scripts/dark.js"></script>
 
 </html>

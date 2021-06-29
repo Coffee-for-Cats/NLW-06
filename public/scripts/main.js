@@ -4,9 +4,8 @@ const modal = Modal()
 
 const modalTitle = document.querySelector(".modal h2")
 const modalDescription = document.querySelector(".modal p")
-const modalButton = document.querySelector(".modal button ")
+const modalButton = document.querySelector(".modal button")
 
-//Pega os botões com a classe check
 const cancelButton = document.querySelector('div.cancel')
 const checkButtons = document.querySelectorAll("a.check")
 const deleteButtons = document.querySelectorAll(".actions a.delete")
@@ -44,7 +43,10 @@ function handleClick(event, check = true) {
     //build the new form
     form.setAttribute("action", `/question/${roomId}/${questionId}/${slug}`)
 
-
     //abre a modal
     modal.open()
 }
+
+//A modal precisa fechando quando clicamos em confirmar. Se não, dois requests podem ser enviados.
+// const modalButton2 = document.querySelectorAll(".modal button")[1];
+// modalButton2.addEventListener("click", modal.close());

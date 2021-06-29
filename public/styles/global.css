@@ -7,22 +7,6 @@
 }
 
 html {
-  --black: #0d114f;
-  --white: #fafafa;
-  --red: #e83f5b;
-  --light-blue: #e0ecff;
-  --blue: #3485ff;
-  --background: #fbfcff;
-  --overlay: #040911;
-  --icons-details: #a5b0c1;
-
-  --grey-dark: #4d5e77;
-  --grey-blue: #a1b2cd;
-  --grey-light: #e5eaf1;
-
-  --grey-medium: #eaecf2;
-  --grey-medium-blue: rgb(161, 178, 205);
-
   font-size: 62.5%; /*Faz o REM ser multiplo de 10 ao invés de multiplo de 16. Por padrão 1 rem = 10px*/
   /* Para responsividade isso é MARAVILHOSO, te amo Jake <3 */
 }
@@ -99,7 +83,7 @@ button > img,
   width: 2rem;
 }
 
-button.outrlined,
+button.outlined,
 .button.outlined {
   background: var(--white);
   color: var(--blue);
@@ -125,18 +109,32 @@ button.grey,
   margin: auto auto;
 }
 
-/* GAMBIARA, eu sei, mas funciona kkk */
-.header-container {
-  width: 100%;
-  position: fixed;
-  max-width: min(102rem, 85%);
-  padding: 2rem 12.5% 1.7rem 12.5%;
-  margin-left: -12.5%;
-  box-sizing: content-box;
-  background: var(--background);
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+.header-container a img,
+header img {
+  width: 16.7rem;
 }
 
-.content header img {
-  width: 16.7rem;
+/* DARK MODE BUTTON */
+button.dark-mode {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5rem;
+  height: 5rem;
+  background: var(--blue);
+  object-fit: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 1.2rem;
+
+  border-radius: 50%;
+}
+
+button.dark-mode img {
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0;
 }

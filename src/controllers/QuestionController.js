@@ -1,4 +1,5 @@
 const Database = require('../db/config')
+const Encoder = require('html-entities')
 
 module.exports = {
     async index(req, res){
@@ -33,19 +34,30 @@ module.exports = {
 
     async create(req, res){
         const db = await Database()
-        const question = req.body.question
+        let question = req.body.question
         const roomId = req.params.room
 
-        await db.run(`INSERT INTO questions(
-            title,
-            room,
-            read
-        ) VALUES (
-            "${question}",
-            ${roomId},
-            0
-        )`)
+        if(question && typeof roomId == 'string') {
+            //Troca os ' por ". Isso é questão de segurança (⌐■_■)
+            question = question.replace(`'`, `' || char(38) || '`);
+    
+            await db.run(`INSERT INTO questions(
+                title,
+                room,
+                read
+            ) VALUES (
+                '${question}',
+                ${roomId},
+                0
+            )`)
+    
+            res.redirect(`/room/${roomId}`)
+        } else {
+            res.render('error', { 
+                errorText:'Algo deu errado e isso não deveria acontecer. Contate o Desenvolvedor.', 
+                errorDestination: '/' 
+            })
+        }
 
-        res.redirect(`/room/${roomId}`)
     }
 }

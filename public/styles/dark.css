@@ -1,0 +1,70 @@
+html {
+  --black: #fafafa;
+  --white: #fafafa;
+  --red: #e83f5b;
+  --light-blue: #e0ecff;
+  --blue: #3582f5;
+  --background: rgb(27, 27, 27);
+  --overlay: #040911;
+  --icons-details: #a5b0c1;
+
+  --grey-dark: #3a475a;
+  --grey-blue: #5d6a7e;
+  --grey-light: #cacfd6;
+
+  --grey-medium: #c8cacf;
+  --grey-medium-blue: rgb(129, 144, 168);
+}
+
+input,
+textarea,
+.button.outlined {
+  background: rgb(46, 46, 46);
+  color: var(--white) !important;
+}
+
+a.button {
+  color: var(--white) !important;
+}
+
+div.header-container,
+form {
+  background: rgb(36, 36, 36);
+}
+
+form {
+  border-color: rgb(103, 103, 105) !important;
+  background: transparent;
+}
+
+p {
+  color: var(--white) !important;
+}
+
+p + p {
+  color: var(--grey-light) !important;
+}
+
+input#room-id {
+  border: 2px solid var(--blue);
+}
+
+div.question-wrapper {
+  background-color: rgb(36, 36, 36);
+}
+
+a {
+  color: var(--grey-light) !important;
+}
+
+div.modal {
+  background-color: rgb(36, 36, 36) !important;
+}
+
+div.question-wrapper.read {
+  background: rgb(25, 25, 25) !important;
+}
+
+.read div.question > p {
+  color: rgb(129, 129, 132) !important;
+}

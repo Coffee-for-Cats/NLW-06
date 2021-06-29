@@ -2,34 +2,34 @@
   max-width: min(102rem, 85%);
 }
 
-#room header {
+header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#room header .buttons {
+header .buttons {
   display: flex;
 }
 
-#room header .buttons .button:nth-child(1) {
+header .buttons .button:nth-child(1) {
   margin-right: 0.8rem;
   padding: 1.3rem 1rem 1.3rem 1.6rem;
 }
 
-#room header .buttons .button:nth-child(2) {
+header .buttons .button:nth-child(2) {
   margin-right: 0.8rem;
   padding: 1.3rem 3.2rem;
 }
 
-#room header .buttons .button:nth-child(1) img {
+header .buttons .button:nth-child(1) img {
   margin-left: 1rem;
   width: 2rem;
   height: 2rem;
 }
 
-#room header .buttons .button:nth-child(2) img {
+header .buttons .button:nth-child(2) img {
   margin-left: 1rem;
   width: 2rem;
   height: 2rem;
@@ -181,4 +181,21 @@
   line-height: 1.9rem;
 
   margin-top: 1.3rem;
+}
+
+/* Header centralizada, bonitinha e fixada */
+.header-container {
+  width: 100vw;
+  position: fixed;
+  box-sizing: content-box;
+  background: var(--background);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  padding: 2.2rem 0 1.7rem 0;
+}
+
+.header-container header {
+  max-width: min(102rem, 85%);
 }

@@ -9,40 +9,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="/images/icon-tab.png">
+
     <!--CSS-->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/room.css">
     <link rel="stylesheet" href="/styles/modal.css">
+    <!--Colormode / Darkmode-->
+    <link rel="stylesheet" href="/styles/light.css" class="colors">
 
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!--SCRIPTS-->
     <script src="/scripts/main.js" defer type="module"></script>
 </head>
 
 <body>
-    <div id="room" class="content">
-        <div class="header-container">
-            <header>
-                <a href="/">
-                    <img src="/images/logo.svg" alt="Rockeat.Q Logo" />
-                </a>
-    
-                <div class="buttons">
-                    <div class="button outlined" id="room-id" data-id="<%= roomId %>">
-                        #<%= roomId %>
-                        <img src="/images/copy.svg" alt="Copiar número da sala">
-                    </div>
-                    <a href="/create-pass" class="button">
-                        <img src="/images/users-white.svg" alt="Criar uma sala">
-                        Criar Sala
-                    </a>
+    <div class="header-container" class="content">
+        <header>
+            <a href="/">
+                <img src="/images/logo-light.svg" alt="Rockeat.Q Logo" />
+            </a>
+
+            <div class="buttons">
+                <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+                    #<%= roomId %>
+                    <img src="/images/copy.svg" alt="Copiar número da sala">
                 </div>
-            </header>
-        </div>
+                <a href="/create-pass" class="button">
+                    <img src="/images/users-white.svg" alt="Criar uma sala">
+                    Criar Sala
+                </a>
+            </div>
+        </header>
+    </div>
+    
+    <div id="room" class="content">
 
         <div id="bg">
             <div class="ball top"></div>
@@ -143,6 +147,13 @@
             </form>
         </div>
     </div>
+
+    <button class="dark-mode" onClick="switchDark()">
+        <img src="/images/button-light.svg" alt="Alternar dark-mode">
+    </button>
+
+    <!-- DARK MODE -->
+    <script src="/scripts/dark.js"></script>
 
 </body>
 
